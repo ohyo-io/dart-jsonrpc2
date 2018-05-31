@@ -1,11 +1,29 @@
 # dart-jsonrpc2
 JSON-RPC 2.0 pure transport agnostic implementation for Dart-2
 
-JSON-RPC is a simple protocol for calling methods on a server and (usually)
-getting a response back. The specification is at [http://jsonrpc.org](http://jsonrpc.org).
+This module makes it easy to process and respond to JSON-RPC (v2.0) messages.
 
-This package implements the [JSON-RPC 2.0 specification](http://www.jsonrpc.org/specification),
-with failover to 1.0 in the server implementation.
+JSON-RPC is an extremely simple format to communicate between the client (for example browser) and the host (server).
+It's an easy way to run functions server side by providing the server the function name that needs to be executed and the params alongside with it.
+Server runs this function and returns the results for it.
+
+Illustrating pseudocode
+
+    --> RUN FUNCTION "add_comment" WITH "user", "this is cool!"
+    <-- RETURN add_comment("user", "this is cool")
+    
+
+You can find the full JSON-RPC specification [here](http://www.jsonrpc.org/specification "RPC 2.0 Specification").
+
+## Why i created yet another JSON-RPC 2.0 module
+
+I needed a JSON-RPC2 library which comply with Unix Philosophy (by Peter H. Salus in A Quarter-Century of Unix at 1994): 
+
+- Write programs that do one thing and do it well.
+- Write programs to work together.
+- Write programs to handle text streams, because that is a universal interface.
+
+#### and nothing else...
  
 Client Basics
 -------------
