@@ -2,8 +2,8 @@
 library io_client_test;
 
 import 'package:test/test.dart';
-import 'package:jsonrpc2/jsonrpc_io_client.dart';
-import "package:jsonrpc2/src/classb.dart";
+import 'package:ohyo_jsonrpc2/jsonrpc_io_client.dart';
+import "package:ohyo_jsonrpc2/src/classb.dart";
 
 class MyClass {
   MyClass();

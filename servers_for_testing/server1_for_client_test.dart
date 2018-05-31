@@ -1,16 +1,16 @@
 import 'dart:convert';
-import 'package:logging/logging.dart';
+//import 'package:logging/logging.dart';
 import 'package:start/start.dart';
-import 'package:jsonrpc2/jsonrpc_service.dart';
+import 'package:ohyo_jsonrpc2/jsonrpc_service.dart';
 
-import 'package:jsonrpc2/src/rpc_methods.dart';
+import 'package:ohyo_jsonrpc2/src/rpc_methods.dart';
 
 /*
  * Test server. Uses start.dart and works with test_client.dart
  * Run this first.
  */
 
-final Logger _logger = new Logger('test_server');
+//final Logger _logger = new Logger('test_server');
 
 void main() => startServer();
 
@@ -25,10 +25,10 @@ void startServer() {
 
 void doJsonRpc(Request request, dynamic instance) {
   request.response.type("application/json; charset=UTF-8");
-  UTF8
+  utf8
       .decodeStream(request.input)
       .then((String requestString) => jsonRpc(requestString, instance))
-      .then((String result) => request.response.send(result));
+      .then((result) => request.response.send(result));
 }
 
 class TestServer {

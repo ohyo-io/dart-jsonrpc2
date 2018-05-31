@@ -1,7 +1,7 @@
 library rpc_methods;
 
-import "package:jsonrpc2/rpc_exceptions.dart";
-import "package:jsonrpc2/src/classb.dart";
+import "package:ohyo_jsonrpc2/rpc_exceptions.dart";
+import "package:ohyo_jsonrpc2/src/classb.dart";
 
 var cheapPersistence = '';
 

@@ -2,8 +2,8 @@
 library dispatcher_unit_tests;
 
 import 'package:test/test.dart';
-import 'package:jsonrpc2/dispatcher.dart';
-import 'package:jsonrpc2/rpc_exceptions.dart';
+import 'package:ohyo_jsonrpc2/dispatcher.dart';
+import 'package:ohyo_jsonrpc2/rpc_exceptions.dart';
 
 class Foo {
   String greetName;
@@ -168,7 +168,7 @@ void main() {
   test("divide by zero", () {
     Dispatcher z = new Dispatcher(new Foo());
     z.dispatch(
-        'divzerotest', [3]).then((num value) => expect(value, double.INFINITY));
+        'divzerotest', [3]).then((num value) => expect(value, double.infinity));
   });
 
   test("zero over zero", () {

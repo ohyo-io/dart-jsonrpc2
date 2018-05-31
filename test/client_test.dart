@@ -2,9 +2,9 @@
 library client_test;
 
 import 'package:test/test.dart';
-import 'package:jsonrpc2/jsonrpc_client.dart';
+import 'package:ohyo_jsonrpc2/jsonrpc_client.dart';
 //import 'package:test/html_enhanced_config.dart';
-import "package:jsonrpc2/src/classb.dart";
+import "package:ohyo_jsonrpc2/src/classb.dart";
 
 class MyClass {
   MyClass();

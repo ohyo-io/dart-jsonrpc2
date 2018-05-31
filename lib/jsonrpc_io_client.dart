@@ -30,7 +30,7 @@ class ServerProxy extends ServerProxyBase {
 
     String payload;
     try {
-      payload = JSON.encode(package);
+      payload = jsonEncode(package);
     } catch (e) {
       throw new UnsupportedError(
           'Item ($package) could not be serialized to JSON');
@@ -47,13 +47,13 @@ class ServerProxy extends ServerProxyBase {
     String jsonContent = '';
     Completer c = new Completer();
 
-    response.transform(UTF8.decoder).listen((dynamic contents) {
+    response.transform(utf8.decoder).listen((dynamic contents) {
       jsonContent += contents.toString();
     }, onDone: () {
       if (response.statusCode == 204 || jsonContent.isEmpty) {
         c.complete(null);
       } else if (response.statusCode == 200) {
-        c.complete(JSON.decode(jsonContent));
+        c.complete(jsonDecode(jsonContent));
       } else {
         c.completeError(
             new TransportStatusError(response.statusCode, response, package));

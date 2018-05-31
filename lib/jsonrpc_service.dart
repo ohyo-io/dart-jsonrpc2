@@ -198,7 +198,7 @@ jsonRpcExec(request, Object instance) {
 
 parseJson(aString) {
   try {
-    var data = JSON.decode(aString);
+    var data = jsonDecode(aString);
     return data;
   } catch (e) {
     throw new RpcException("Parse error", -32700);
@@ -210,9 +210,9 @@ encodeResponse(response) {
     return null;
   }
   try {
-    return JSON.encode(response);
+    return jsonEncode(response);
   } catch (e) {
-    return JSON.encode(makeExceptionMap(
+    return jsonEncode(makeExceptionMap(
         new RpcException(
             "Result was not JSON-serializable (${response['result']}).",
             -32601),

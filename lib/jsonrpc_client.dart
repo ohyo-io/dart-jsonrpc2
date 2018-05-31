@@ -35,7 +35,7 @@ class ServerProxy extends ServerProxyBase {
     HttpRequest request = new HttpRequest();
     String p;
     try {
-      p = JSON.encode(package);
+      p = jsonEncode(package);
     } catch (e) {
       throw new UnsupportedError(
           'Item (${package}) could not be serialized to JSON');
@@ -52,7 +52,7 @@ class ServerProxy extends ServerProxyBase {
       if (request.status == 204 || body.isEmpty) {
         return null;
       } else {
-        return JSON.decode(body);
+        return jsonDecode(body);
       }
     });
   }
